@@ -100,7 +100,8 @@ Content-Type: application/json
             "pl_type": "Revenue",
             "gl_name": "Revenue-Tuition",
             "gl_num": "408610",
-            "accounting_code": ""
+            "accounting_code": "",
+            "billing_credit_card_type": ""
         }]
 }
 ```
