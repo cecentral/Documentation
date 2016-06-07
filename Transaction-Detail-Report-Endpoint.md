@@ -44,13 +44,38 @@ In all cases, `startDate` and/or `endDate` will match transactions that were ent
 - `401 Unauthorized`: No or invalid authentication credentials.
 - `406 Not Acceptable`: The response can't be formatted in an acceptable media type. In particular, the `Accept` header doesn't include `text/csv` or `application/json`.
 
-### Example
+### Examples
 
 This request will retrieve all transactions entered between 2016-04-06 at midnight and 2016-04-07 at midnight, 48 total hours of transactions. It will return data in JSON format.
 
+```
+curl -X GET
+     -H "Authorization: Bearer ABC.XYZ.123"
+     -H "Accept: application/json"
+     "http://api.domain.name/reports/transactions?startDate=20160406&endDate=20160407"
+```
+
+```
+curl -X GET
+     -H "Authorization: Bearer ABC.XYZ.123"
+     -H "Accept: text/csv"
+     "http://api.domain.name/reports/transactions?startDate=20160306"
+```
+
+```
+curl -X GET
+     "http://api.domain.name/reports/transactions?endDate=20160407"
+```
+
+```
+curl -X GET
+     -H "Accept: application/json"
+     "http://api.domain.name/reports/transactions"
+```
+
 **Request**
 
-- URL: http://api.domain.name/reports/transactions?startDate=20160406&?endDate=20160407
+- URL: http://api.domain.name/reports/transactions?startDate=20160406&endDate=20160407
 - Method: `GET`
 - Headers:
 
