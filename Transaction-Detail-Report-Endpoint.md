@@ -41,9 +41,9 @@ In all cases, `startDate` and/or `endDate` will match transactions that were ent
 ### Response Codes
 
 - `200 OK`: Report details successfully retrieved.
-- `400 Bad Method`:
+- `400 Bad Method`: Server does not understand request, malformed syntax.
 - `401 Unauthorized`: No or invalid authentication credentials.
-- `405 Method Not Allowed`:
+- `405 Method Not Allowed`: Reqest method not allowed for target resource.
 - `406 Not Acceptable`: The response can't be formatted in an acceptable media type. In particular, the `Accept` header doesn't include `text/csv` or `application/json`.
 
 ## Examples
