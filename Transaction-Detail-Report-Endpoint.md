@@ -46,7 +46,9 @@ In all cases, `startDate` and/or `endDate` will match transactions that were ent
 - `405 Method Not Allowed`:
 - `406 Not Acceptable`: The response can't be formatted in an acceptable media type. In particular, the `Accept` header doesn't include `text/csv` or `application/json`.
 
-### Examples
+## Examples
+
+### Command line
 
  The following requests make use of an `Authorization Header` bearing an `Authorization Token`.  This method does not require the presence of a `ProjectCentral login cookie`.
  
@@ -84,6 +86,8 @@ curl -X GET
      "http://api.domain.name/reports/transactions"
 ```
 
+###Console
+
 **Request**
 
 - URL: http://api.domain.name/reports/transactions?startDate=20160406&endDate=20160407
@@ -91,6 +95,7 @@ curl -X GET
 - Headers:
 
 ```
+Authorization: Bearer ABC.XYZ.123
 Accept: application/json
 ```
  
