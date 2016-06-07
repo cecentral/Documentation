@@ -88,6 +88,8 @@ curl -X GET
 
 ###Console
 
+The following request makes use of an `Authentication Token` to request a response in `JSON` for all transactions entered between 2016-04-06 at midnight and 2016-04-07 at midnight, 48 total hours of transactions. An example response is provided.
+
 **Request**
 
 - URL: http://api.domain.name/reports/transactions?startDate=20160406&endDate=20160407
