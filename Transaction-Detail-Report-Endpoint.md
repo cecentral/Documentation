@@ -8,7 +8,7 @@ All API endpoints can be accessed via the API subdomain of the site
 
 ## Authentication
 
-Requester *must* either have a `ProjectCentral login cookie` present or *shall* send an `[authorization token](https://github.com/cecentral/documentation/blob/master/Token%20Based%20Authentication%20for%20API%20Endpoints.md)` in the request header.
+Requester **must** either have a `ProjectCentral login cookie` present or **shall** send an [`authorization` token](https://github.com/cecentral/documentation/blob/master/Token%20Based%20Authentication%20for%20API%20Endpoints.md) in the request header.
 
 ## Supported Methods
 
@@ -46,9 +46,9 @@ In all cases, `startDate` and/or `endDate` will match transactions that were ent
 
 ### Examples
 
- The following requests make use of an Authorization Header bearing an Authorization Token.  This method does not require the presence of a ProjectCentral login cookie.
+ The following requests make use of an `Authorization Header` bearing an `Authorization Token`.  This method does not require the presence of a `ProjectCentral login cookie`.
  
- _Here we are requesting a response in JSON for all transactions entered between 2016-04-06 at midnight and 2016-04-07 at midnight, 48 total hours of transactions._
+ _Here we are requesting a response in `JSON` for all transactions entered between 2016-04-06 at midnight and 2016-04-07 at midnight, 48 total hours of transactions._
 ```
 curl -X GET
      -H "Authorization: Bearer ABC.XYZ.123"
@@ -56,7 +56,7 @@ curl -X GET
      "http://api.domain.name/reports/transactions?startDate=20160406&endDate=20160407"
 ```
 
- _Here we are requesting a response in CSV for all transactions entered between 2016-04-06 at midnight and 2016-04-07 at midnight, 48 total hours of transactions._
+ _Here we are requesting a response in `CSV` for all transactions entered between 2016-03-06 at midnight and the current date and time._
 ```
 curl -X GET
      -H "Authorization: Bearer ABC.XYZ.123"
@@ -64,11 +64,15 @@ curl -X GET
      "http://api.domain.name/reports/transactions?startDate=20160306"
 ```
 
+ The following requests require the presence of a ProjectCentral login cookie.
+
+ _Here we are requesting a response in `CSV` for all transactions entered one year prior to midnight of 2016-04-07._
 ```
 curl -X GET
      "http://api.domain.name/reports/transactions?endDate=20160407"
 ```
 
+ _Here we are requesting a response in `JSON` for all transactions within the default time frame of the previous 48 hrs._
 ```
 curl -X GET
      -H "Accept: application/json"
