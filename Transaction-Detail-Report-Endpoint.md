@@ -8,7 +8,7 @@ All API endpoints can be accessed via the API subdomain of the site
 
 ## Authentication
 
-Requester **must** either have a `ProjectCentral login cookie` present or **shall** send an [`authorization` token](https://github.com/cecentral/documentation/blob/master/Token%20Based%20Authentication%20for%20API%20Endpoints.md) in the request header.
+Requester **must** either have a `ProjectCentral login cookie` present or **shall** send an [`authorization token`](https://github.com/cecentral/documentation/blob/master/Token%20Based%20Authentication%20for%20API%20Endpoints.md) in the request header.
 
 ## Supported Methods
 
@@ -41,12 +41,15 @@ In all cases, `startDate` and/or `endDate` will match transactions that were ent
 ### Response Codes
 
 - `200 OK`: Report details successfully retrieved.
+- `400 Bad Method`:
 - `401 Unauthorized`: No or invalid authentication credentials.
+- `405 Method Not Allowed`:
 - `406 Not Acceptable`: The response can't be formatted in an acceptable media type. In particular, the `Accept` header doesn't include `text/csv` or `application/json`.
 
 ### Examples
 
  The following requests make use of an `Authorization Header` bearing an `Authorization Token`.  This method does not require the presence of a `ProjectCentral login cookie`.
+ 
  
  _Here we are requesting a response in `JSON` for all transactions entered between 2016-04-06 at midnight and 2016-04-07 at midnight, 48 total hours of transactions._
 ```
@@ -64,7 +67,9 @@ curl -X GET
      "http://api.domain.name/reports/transactions?startDate=20160306"
 ```
 
- The following requests require the presence of a ProjectCentral login cookie.
+
+ The following requests require the presence of a `ProjectCentral login cookie`.
+
 
  _Here we are requesting a response in `CSV` for all transactions entered one year prior to midnight of 2016-04-07._
 ```
