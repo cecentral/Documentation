@@ -1,6 +1,9 @@
-We have added support for a token-based authentication scheme for reporting API endpoints. Via an application key or standard PJC credentials, a temporary security token can be retrieved that will grant access to reporting endpoints, include the transaction detail report.
+# Token Based Authentication for API Endpoints
 
-# Retrieving a token
+We have added support for a token-based authentication scheme for reporting API endpoints. Via an application key or 
+standard PJC credentials, a temporary security token can be retrieved that will grant access to reporting endpoints, include the transaction detail report.
+
+## Retrieving a token
 
 You can retrieve an **authorization token** using either PJC login credentials or an application key. In cases where another computer system is accessing a reporting endpoint, an application key is preferable.
 
@@ -10,7 +13,7 @@ To request an **authorization token**, make an HTTP `POST` request to the `/toke
 
 The body of this request should contain either a valid application key or valid PJC credentials (email and password). The request should indicate via the `Content-Type` header how the body is formatted. Media types `application/x-www-form-urlencoded` and `application/json` are supported.
 
-## Examples
+### Examples
 
 Request an authorization token using PJC credentials, with the body formatted as `application/x-www-form-urlencoded`:
 
@@ -48,13 +51,13 @@ curl -X POST
      "http://api.domain.edu/token"
 ```
 
-## Token Expiration
+### Token Expiration
 
 Unlike application keys, authentication tokens are temporary. Tokens issued with an application key expire ten minutes after being issued. Tokens issued with PJC credentials expire 24 hours after being issued.
 
 Once a token has expired, further requests using that token will be result in an HTTP response code of 401 Unauthorized.
 
-# Using an authentication token
+## Using an authentication token
 
 Once you have retrieved a valid authentication token, it can be included in the `Authorization` header of subsequent HTTP requests. This system uses what is known as a "bearer authentication scheme", so the authentication token value must be prefixed with "Bearer" in the `Authorization` header.
 
