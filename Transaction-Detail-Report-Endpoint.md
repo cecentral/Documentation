@@ -8,7 +8,7 @@ All API endpoints can be accessed via the API subdomain of the site
 
 ## Authentication
 
-Requester must have ProjectCentral login cookie present. *Note:* Header-based authentication support is forthcoming.
+Requester must either have a ProjectCentral login cookie present or shall send an [authorization token](https://github.com/cecentral/documentation/blob/master/Token%20Based%20Authentication%20for%20API%20Endpoints.md) in the request header.
 
 ## Supported Methods
 
