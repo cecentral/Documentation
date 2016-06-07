@@ -8,7 +8,7 @@ All API endpoints can be accessed via the API subdomain of the site
 
 ## Authentication
 
-This is a secured endpoint. Requests must provide either a valid ProjectCentral login cookie or an [`authorization token`](https://github.com/cecentral/documentation/blob/master/Token%20Based%20Authentication%20for%20API%20Endpoints.md) in the request header.
+**This is a secured endpoint.** Requests must provide either a valid ProjectCentral login cookie or an [authorization token](https://github.com/cecentral/documentation/blob/master/Token%20Based%20Authentication%20for%20API%20Endpoints.md) in the request header.
 
 ## Supported Methods
 
